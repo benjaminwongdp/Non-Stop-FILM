@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Stop Film | Commercial & Corporate Video Production London</title>
+    <meta name="description" content="London-based commercial & corporate video production company. From creative concept to final grade, we craft cinema-grade films for ambitious brands.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#0A0A0A',
+                        surface: '#141414',
+                        surfaceHover: '#1C1C1C',
+                        borderSubtle: '#262626',
+                        cinemaGold: '#D4AF37',
+                        cinemaGoldHover: '#E5C158',
+                        offWhite: '#F5F5F5',
+                        mutedGray: '#A3A3A3'
+                    },
+                    backgroundImage: {
+                        'radial-glow': 'radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, rgba(10, 10, 10, 0) 65%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utility & Cinematic Micro-Interactions -->
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #F5F5F5;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle film grain overlay */
+        .film-grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Portfolio Card Hover Zoom */
+        .project-card:hover .project-thumb {
+            transform: scale(1.04);
+        }
+        .project-card:hover .play-badge {
+            transform: scale(1.1);
+            background-color: #D4AF37;
+            color: #0A0A0A;
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cinemaGold selection:text-obsidian relative">
+
+    <!-- Subtle Ambient Grain Overlay -->
+    <div class="fixed inset-0 film-grain z-50"></div>
+
+    <!-- ==================== 1. STICKY GLASSMORPHIC HEADER ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-obsidian/80 backdrop-blur-md border-b border-borderSubtle/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <!-- Geometric Cinema Frame / Aperture SVG Mark -->
+                    <div class="w-9 h-9 rounded-lg bg-surface border border-borderSubtle group-hover:border-cinemaGold/70 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 text-cinemaGold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <circle cx="12" cy="12" r="3.5" />
+                            <line x1="2" y1="8" x2="5" y2="8" />
+                            <line x1="19" y1="16" x2="22" y2="16" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold tracking-wider text-base sm:text-lg text-offWhite leading-none">
+                            NON-STOP <span class="text-cinemaGold">FILM</span>
+                        </span>
+                        <span class="text-[10px] tracking-[0.22em] text-mutedGray uppercase mt-1">London Production</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#work" class="text-sm font-medium text-mutedGray hover:text-offWhite transition-colors">Work</a>
+                    <a href="#services" class="text-sm font-medium text-mutedGray hover:text-offWhite transition-colors">Services</a>
+                    <a href="#edge" class="text-sm font-medium text-mutedGray hover:text-offWhite transition-colors">Why Us</a>
+                    <a href="#process" class="text-sm font-medium text-mutedGray hover:text-offWhite transition-colors">Process</a>
+                    <a href="#contact" class="text-sm font-medium text-mutedGray hover:text-offWhite transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA & Mobile Menu Button -->
+                <div class="flex items-center gap-3">
+                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cinemaGold hover:bg-cinemaGoldHover text-obsidian font-display font-semibold text-sm transition-all shadow-lg shadow-cinemaGold/10">
+                        <span>Start a Project</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-lg bg-surface border border-borderSubtle text-offWhite hover:border-cinemaGold/50 transition-colors">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-borderSubtle px-4 pt-3 pb-6 space-y-2">
+            <a href="#work" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-offWhite hover:bg-surfaceHover">Selected Work</a>
+            <a href="#services" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-offWhite hover:bg-surfaceHover">Production Services</a>
+            <a href="#edge" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-offWhite hover:bg-surfaceHover">Why Non-Stop Film</a>
+            <a href="#process" class="mobile-link block px-4 py-3 rounded-lg text-base font-medium text-offWhite hover:bg-surfaceHover">4-Step Process</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-link flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-lg bg-cinemaGold text-obsidian font-display font-bold text-sm">
+                    <span>Start a Project</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. CINEMATIC HERO SECTION ==================== -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-radial-glow">
+        <!-- Ambient Cinema Set Visual Background Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=2000&q=80" 
+                onerror="this.src='https://placehold.co/1920x1080/0A0A0A/262626?text=Cinema+Production+Set'"
+                alt="Cinema camera production set in London" 
+                class="w-full h-full object-cover opacity-25 scale-105 filter contrast-125"
+            >
+            <!-- Multi-stop Gradient Vignette -->
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-obsidian/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <!-- Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface/90 border border-borderSubtle mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cinemaGold animate-pulse"></span>
+                    <span class="text-xs font-medium tracking-widest uppercase text-mutedGray">London &amp; UK Commercial Production House</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-offWhite leading-[1.08] mb-6">
+                    Cinema-Grade Storytelling for <span class="text-transparent bg-clip-text bg-gradient-to-r from-cinemaGold via-amber-200 to-cinemaGold">Ambitious Brands.</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-base sm:text-lg md:text-xl text-mutedGray font-light leading-relaxed max-w-2xl mb-10">
+                    End-to-end commercial and corporate video production. From creative development to final theatrical grade, we deliver high-impact films without traditional agency bloat.
+                </p>
+
+                <!-- Dual CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <button 
+                        onclick="openVideoModal('2026 Commercial & Brand Showreel', 'SHOWREEL // 01:45', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                        class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-cinemaGold hover:bg-cinemaGoldHover text-obsidian font-display font-bold text-sm sm:text-base transition-all shadow-xl shadow-cinemaGold/15 cursor-pointer"
+                    >
+                        <i data-lucide="play" class="w-5 h-5 fill-obsidian"></i>
+                        <span>Watch Production Reel</span>
+                    </button>
+
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-surface/90 hover:bg-surfaceHover border border-borderSubtle hover:border-offWhite/30 text-offWhite font-display font-semibold text-sm sm:text-base transition-all">
+                        <span>Get a Project Quote</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-cinemaGold"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Industry Sectors Strip -->
+            <div class="mt-16 sm:mt-24 pt-8 border-t border-borderSubtle/80">
+                <p class="text-xs font-medium uppercase tracking-[0.2em] text-mutedGray mb-5">Trusted Across Key Commercial Sectors</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="flex items-center gap-3 text-offWhite/80">
+                        <i data-lucide="watch" class="w-4 h-4 text-cinemaGold shrink-0"></i>
+                        <span class="text-sm font-medium">Luxury &amp; Horology</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-offWhite/80">
+                        <i data-lucide="cpu" class="w-4 h-4 text-cinemaGold shrink-0"></i>
+                        <span class="text-sm font-medium">FinTech &amp; Enterprise SaaS</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-offWhite/80">
+                        <i data-lucide="building-2" class="w-4 h-4 text-cinemaGold shrink-0"></i>
+                        <span class="text-sm font-medium">Corporate &amp; Architecture</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-offWhite/80">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-cinemaGold shrink-0"></i>
+                        <span class="text-sm font-medium">Hospitality &amp; Lifestyle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. SELECTED WORK (FILTERABLE PORTFOLIO) ==================== -->
+    <section id="work" class="py-20 sm:py-28 bg-obsidian border-t border-borderSubtle/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header & Filter Controls -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-[0.22em] text-cinemaGold block mb-3">Selected Productions</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-offWhite tracking-tight">Featured Commercial Work</h2>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2" id="portfolio-filters">
+                    <button data-filter="all" class="filter-btn active px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium bg-cinemaGold text-obsidian transition-all">
+                        All Productions
+                    </button>
+                    <button data-filter="commercial" class="filter-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium bg-surface text-mutedGray hover:text-offWhite border border-borderSubtle transition-all">
+                        Commercials
+                    </button>
+                    <button data-filter="brand" class="filter-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium bg-surface text-mutedGray hover:text-offWhite border border-borderSubtle transition-all">
+                        Brand Films
+                    </button>
+                    <button data-filter="corporate" class="filter-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium bg-surface text-mutedGray hover:text-offWhite border border-borderSubtle transition-all">
+                        Corporate &amp; Events
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Project Card 1: Commercial -->
+                <article 
+                    data-category="commercial"
+                    onclick="openVideoModal('Tissot Heritage 1936 — Campaign Spot', 'COMMERCIAL // FULL PRODUCTION', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=Tissot+Heritage+1936'"
+                            alt="Tissot Heritage Campaign Film" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        
+                        <!-- Category Pill -->
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Commercial
+                        </span>
+
+                        <!-- Play Button Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Luxury Horology</span>
+                            <span>01:15 • 4K Anamorphic</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            Tissot Heritage — Precision in Motion
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            Macro cinematography, studio lighting design, and theatrical colour grade for digital &amp; retail launch.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project Card 2: Brand Film -->
+                <article 
+                    data-category="brand"
+                    onclick="openVideoModal('Mayfair Architectural Studio — Brand Documentary', 'BRAND FILM // CONCEPT TO DELIVERY', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=Mayfair+Architecture'"
+                            alt="Mayfair Architecture Brand Film" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Brand Film
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Prime Real Estate &amp; Design</span>
+                            <span>02:30 • Brand Anthem</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            Grosvenor &amp; Co. — Crafting Timeless Spaces
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            Executive founder storytelling paired with sweeping architectural motion control across Central London.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project Card 3: Corporate & Events -->
+                <article 
+                    data-category="corporate"
+                    onclick="openVideoModal('Canary Wharf FinTech Summit — Keynote & Brand Film', 'CORPORATE // MULTI-CAM & HIGHLIGHTS', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=FinTech+Global+Summit'"
+                            alt="London FinTech Summit Corporate Film" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Corporate &amp; Events
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Financial Technology</span>
+                            <span>02:00 • Same-Day Edits</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            Apex Financial — Global Investor Summit
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            Multi-camera keynote capture, C-suite interviews, and rapid-turnaround LinkedIn &amp; press deliverables.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project Card 4: Commercial -->
+                <article 
+                    data-category="commercial"
+                    onclick="openVideoModal('Veloce Electric Mobility — Launch Commercial', 'COMMERCIAL // SCRIPT TO SCREEN', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=Urban+Mobility+Spot'"
+                            alt="Commercial Automotive Spot" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Commercial
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Clean Tech &amp; Mobility</span>
+                            <span>00:45 • 16:9 + 9:16 Cutdowns</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            Veloce Urban — Night Ride Campaign
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            High-energy night tracking shots across Shoreditch &amp; Soho with bespoke sound design and VFX.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project Card 5: Brand Film -->
+                <article 
+                    data-category="brand"
+                    onclick="openVideoModal('The Savoy Roastery — Artisan Heritage Film', 'BRAND FILM // HOSPITALITY', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=Hospitality+Brand+Film'"
+                            alt="Luxury Hospitality Brand Film" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Brand Film
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Luxury Hospitality</span>
+                            <span>01:50 • Documentary Style</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            Nocturne Mayfair — After Hours
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            Sensory-driven brand storytelling highlighting culinary craft and atmosphere for international PR.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Project Card 6: Corporate & Events -->
+                <article 
+                    data-category="corporate"
+                    onclick="openVideoModal('NorthStar AI — Series B Investor & Culture Film', 'CORPORATE // RECRUITMENT & PR', 'https://player.vimeo.com/video/76979871?autoplay=1&title=0&byline=0&portrait=0')"
+                    class="project-card group cursor-pointer bg-surface rounded-2xl overflow-hidden border border-borderSubtle hover:border-cinemaGold/50 transition-all duration-300"
+                >
+                    <div class="relative aspect-video overflow-hidden bg-obsidian">
+                        <img 
+                            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" 
+                            onerror="this.src='https://placehold.co/800x450/141414/D4AF37?text=Enterprise+Tech+Film'"
+                            alt="Enterprise Tech Corporate Film" 
+                            class="project-thumb w-full h-full object-cover transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/20 to-transparent"></div>
+                        <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-md bg-obsidian/85 backdrop-blur-sm border border-borderSubtle text-[11px] font-semibold uppercase tracking-wider text-cinemaGold">
+                            Corporate &amp; Events
+                        </span>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="play-badge w-12 h-12 rounded-full bg-obsidian/80 backdrop-blur-md border border-offWhite/30 text-offWhite flex items-center justify-center transition-all duration-300">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-mutedGray mb-2">
+                            <span>Enterprise AI &amp; Cloud</span>
+                            <span>03:00 • Investor Relations</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-offWhite group-hover:text-cinemaGold transition-colors">
+                            NorthStar AI — Scaling British Innovation
+                        </h3>
+                        <p class="text-sm text-mutedGray mt-2 line-clamp-2">
+                            Human-centric leadership profiles and product narrative created ahead of Series B fundraising.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. END-TO-END PRODUCTION SERVICES ==================== -->
+    <section id="services" class="py-20 sm:py-28 bg-surface/50 border-t border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-14">
+                <span class="text-xs font-semibold uppercase tracking-[0.22em] text-cinemaGold block mb-3">Full-Service Capabilities</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-offWhite tracking-tight mb-4">
+                    End-to-End Video Production
+                </h2>
+                <p class="text-mutedGray text-base sm:text-lg font-light">
+                    We handle every stage of production under one roof—giving marketing directors, founders, and agencies a single accountable creative partner.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Service 1 -->
+                <div class="p-7 sm:p-8 rounded-2xl bg-surface border border-borderSubtle hover:border-cinemaGold/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-obsidian border border-borderSubtle flex items-center justify-center text-cinemaGold mb-6">
+                        <i data-lucide="compass" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-offWhite mb-3">01. Creative Development &amp; Pre-Production</h3>
+                    <p class="text-sm sm:text-base text-mutedGray leading-relaxed mb-5">
+                        Great films are won before cameras roll. We translate your commercial objectives into compelling visual treatments and airtight logistics.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-offWhite/80">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Creative Treatments, Scripting &amp; Storyboards</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> UK Location Scouting, Permits &amp; Studio Booking</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Talent Casting, Wardrobing &amp; Call Sheets</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-7 sm:p-8 rounded-2xl bg-surface border border-borderSubtle hover:border-cinemaGold/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-obsidian border border-borderSubtle flex items-center justify-center text-cinemaGold mb-6">
+                        <i data-lucide="film" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-offWhite mb-3">02. Commercial &amp; Brand Film Production</h3>
+                    <p class="text-sm sm:text-base text-mutedGray leading-relaxed mb-5">
+                        High-impact hero commercials, product launches, and brand anthems shot with feature-film optical precision and scalable London crews.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-offWhite/80">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Directing &amp; Director of Photography Leadership</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> ARRI / RED Cinema Packages &amp; Bespoke Lighting</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Licensed Aerial Drone &amp; Motion Control</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-7 sm:p-8 rounded-2xl bg-surface border border-borderSubtle hover:border-cinemaGold/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-obsidian border border-borderSubtle flex items-center justify-center text-cinemaGold mb-6">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-offWhite mb-3">03. Corporate &amp; Executive Communications</h3>
+                    <p class="text-sm sm:text-base text-mutedGray leading-relaxed mb-5">
+                        Elevate stakeholder trust with polished corporate films that move far beyond standard talking-head videos.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-offWhite/80">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> C-Suite Profiles, Investor &amp; ESG Films</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Client Case Studies &amp; Employer Branding</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Flagship Conferences, Summits &amp; Live Events</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-7 sm:p-8 rounded-2xl bg-surface border border-borderSubtle hover:border-cinemaGold/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-obsidian border border-borderSubtle flex items-center justify-center text-cinemaGold mb-6">
+                        <i data-lucide="sliders" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-offWhite mb-3">04. Post-Production &amp; Multi-Platform Delivery</h3>
+                    <p class="text-sm sm:text-base text-mutedGray leading-relaxed mb-5">
+                        Complete finishing pipeline tailored for modern omnichannel marketing—from broadcast masters to high-converting social cutdowns.
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-offWhite/80">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> Narrative Editing &amp; Motion Graphics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> DaVinci Resolve Theatrical Colour Grading</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cinemaGold"></i> 16:9, 9:16 &amp; 1:1 Social Cutdowns + Subtitles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. THE PRODUCTION EDGE (WHY NON-STOP FILM) ==================== -->
+    <section id="edge" class="py-20 sm:py-28 bg-obsidian border-t border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Positioning Narrative -->
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-semibold uppercase tracking-[0.22em] text-cinemaGold block mb-3">The Non-Stop Advantage</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-offWhite tracking-tight mb-5">
+                        Cinema Aesthetics. <br>Agile Execution.
+                    </h2>
+                    <p class="text-mutedGray text-base leading-relaxed mb-6">
+                        Founded by veteran Director of Photography <strong class="text-offWhite font-medium">Benjamin Wong</strong>, Non-Stop Film bridges the gap between boutique creative agility and high-end cinema craft.
+                    </p>
+                    <p class="text-mutedGray text-base leading-relaxed mb-8">
+                        Traditional agencies pass your budget through layers of account managers and third-party rental markups. With our dedicated London crew and <span class="text-offWhite">in-house cinema camera &amp; lighting inventory</span>, more of your investment goes directly onto the screen.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-cinemaGold hover:text-cinemaGoldHover font-display font-semibold text-sm group">
+                        <span>Discuss your upcoming campaign</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Right Column: 3 Key Value Pillars -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="p-6 sm:p-7 rounded-2xl bg-surface border border-borderSubtle flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-cinemaGold/10 border border-cinemaGold/30 flex items-center justify-center text-cinemaGold shrink-0">
+                            <i data-lucide="aperture" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-offWhite mb-1.5">In-House Cinema Camera &amp; Lighting Inventory</h3>
+                            <p class="text-sm text-mutedGray leading-relaxed">
+                                Immediate access to our own digital cinema camera systems, anamorphic &amp; spherical prime lenses, and studio LED lighting—eliminating third-party rental markups and accelerating turnaround.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-7 rounded-2xl bg-surface border border-borderSubtle flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-cinemaGold/10 border border-cinemaGold/30 flex items-center justify-center text-cinemaGold shrink-0">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-offWhite mb-1.5">Director &amp; Cinematographer-Led Craft</h3>
+                            <p class="text-sm text-mutedGray leading-relaxed">
+                                Every project is led hands-on by senior creatives with over a decade of commercial, narrative, and broadcast experience—ensuring visual consistency from pitch deck to final export.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-7 rounded-2xl bg-surface border border-borderSubtle flex flex-col sm:flex-row gap-5 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-cinemaGold/10 border border-cinemaGold/30 flex items-center justify-center text-cinemaGold shrink-0">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-offWhite mb-1.5">Transparent Turnkey Budgets</h3>
+                            <p class="text-sm text-mutedGray leading-relaxed">
+                                Clear, itemized production proposals with zero hidden fees. We scale our crew footprint precisely to your shoot requirements—whether a nimble 3-person executive shoot or a full commercial soundstage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. 4-STEP PRODUCTION PROCESS ==================== -->
+    <section id="process" class="py-20 sm:py-28 bg-surface/40 border-t border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.22em] text-cinemaGold block mb-3">How We Work</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-offWhite tracking-tight mb-4">
+                    Seamless From Brief to Broadcast
+                </h2>
+                <p class="text-mutedGray text-sm sm:text-base">
+                    A structured, milestone-driven workflow designed for busy marketing teams and brand stakeholders.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="relative p-6 rounded-2xl bg-surface border border-borderSubtle">
+                    <span class="font-display font-extrabold text-4xl text-cinemaGold/25 block mb-4">01</span>
+                    <h3 class="font-display font-bold text-lg text-offWhite mb-2">Discovery &amp; Brief</h3>
+                    <p class="text-sm text-mutedGray leading-relaxed">
+                        We align on your audience, distribution channels, KPIs, and budget to define the strongest creative angle.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative p-6 rounded-2xl bg-surface border border-borderSubtle">
+                    <span class="font-display font-extrabold text-4xl text-cinemaGold/25 block mb-4">02</span>
+                    <h3 class="font-display font-bold text-lg text-offWhite mb-2">Pre-Production</h3>
+                    <p class="text-sm text-mutedGray leading-relaxed">
+                        Script lock, visual lookbook, casting, locations, and detailed production schedule approved before shoot day.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative p-6 rounded-2xl bg-surface border border-borderSubtle">
+                    <span class="font-display font-extrabold text-4xl text-cinemaGold/25 block mb-4">03</span>
+                    <h3 class="font-display font-bold text-lg text-offWhite mb-2">Principal Photography</h3>
+                    <p class="text-sm text-mutedGray leading-relaxed">
+                        Our London production crew executes on set with cinema-grade optics, lighting, and live client monitoring.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative p-6 rounded-2xl bg-surface border border-borderSubtle">
+                    <span class="font-display font-extrabold text-4xl text-cinemaGold/25 block mb-4">04</span>
+                    <h3 class="font-display font-bold text-lg text-offWhite mb-2">Post &amp; Delivery</h3>
+                    <p class="text-sm text-mutedGray leading-relaxed">
+                        Collaborative Frame.io review rounds, bespoke colour grading, sound mix, and multi-aspect ratio masters.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. PROJECT INQUIRY / QUOTE FORM ==================== -->
+    <section id="contact" class="py-20 sm:py-28 bg-obsidian border-t border-borderSubtle relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Contact Info -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-[0.22em] text-cinemaGold block mb-3">Start a Conversation</span>
+                        <h2 class="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-offWhite tracking-tight mb-5">
+                            Ready to elevate your brand on screen?
+                        </h2>
+                        <p class="text-mutedGray text-base leading-relaxed mb-8">
+                            Share a few details about your upcoming commercial, brand film, or corporate event. We respond within one business day with initial ideas and a tailored production estimate.
+                        </p>
+
+                        <div class="space-y-5 mb-10">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-surface border border-borderSubtle flex items-center justify-center text-cinemaGold shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider text-mutedGray">New Business &amp; Production Inquiries</p>
+                                    <a href="mailto:hello@non-stopfilm.co.uk" class="text-offWhite font-medium hover:text-cinemaGold transition-colors">
+                                        hello@non-stopfilm.co.uk
+                                    </a>
+                                    <p class="text-xs text-mutedGray mt-0.5">Direct Producer Desk: benjamin@non-stopfilm.co.uk</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-surface border border-borderSubtle flex items-center justify-center text-cinemaGold shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider text-mutedGray">Base of Operations</p>
+                                    <p class="text-offWhite font-medium">London, United Kingdom</p>
+                                    <p class="text-xs text-mutedGray mt-0.5">Available across the UK, Europe &amp; International</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Assurance Box -->
+                    <div class="p-5 rounded-xl bg-surface border border-borderSubtle">
+                        <div class="flex items-center gap-2.5 text-cinemaGold text-sm font-display font-semibold mb-1.5">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            <span>Full Production Insurance &amp; NDA Ready</span>
+                        </div>
+                        <p class="text-xs text-mutedGray leading-relaxed">
+                            Public liability, hired-in/owned equipment cover, and strict confidentiality for pre-launch product campaigns.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Inquiry Form Card -->
+                <div class="lg:col-span-7">
+                    <div class="p-6 sm:p-10 rounded-2xl bg-surface border border-borderSubtle shadow-2xl">
+                        <form id="inquiry-form" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="name" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Your Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Alex Morgan"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite placeholder-mutedGray/40 focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Company / Brand *</label>
+                                    <input type="text" id="company" name="company" required placeholder="Acme London Ltd"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite placeholder-mutedGray/40 focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="email" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Work Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="alex@company.co.uk"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite placeholder-mutedGray/40 focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label for="projectType" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Production Type</label>
+                                    <select id="projectType" name="projectType"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                        <option value="Commercial / Product Launch">Commercial / Product Launch</option>
+                                        <option value="Brand Documentary / Anthem">Brand Documentary / Anthem</option>
+                                        <option value="Corporate / Executive Film">Corporate / Executive Film</option>
+                                        <option value="Conference / Event Coverage">Conference / Event Coverage</option>
+                                        <option value="Social Media Campaign Pack">Social Media Campaign Pack</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="budget" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Estimated Budget (GBP)</label>
+                                    <select id="budget" name="budget"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                        <option value="£3,000 – £5,000">£3,000 – £5,000</option>
+                                        <option value="£5,000 – £10,000" selected>£5,000 – £10,000</option>
+                                        <option value="£10,000 – £25,000">£10,000 – £25,000</option>
+                                        <option value="£25,000+">£25,000+</option>
+                                        <option value="Not sure yet — seeking guidance">Not sure yet — seeking guidance</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="timeline" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Target Delivery Timeline</label>
+                                    <input type="text" id="timeline" name="timeline" placeholder="e.g. Next month / Q4 Launch"
+                                        class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite placeholder-mutedGray/40 focus:outline-none focus:border-cinemaGold transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="brief" class="block text-xs font-medium uppercase tracking-wider text-mutedGray mb-2">Project Brief &amp; Objectives *</label>
+                                <textarea id="brief" name="brief" rows="4" required placeholder="Tell us about your story, key deliverables, shoot locations, or reference films..."
+                                    class="w-full px-4 py-3 rounded-xl bg-obsidian border border-borderSubtle text-offWhite placeholder-mutedGray/40 focus:outline-none focus:border-cinemaGold transition-colors text-sm"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 px-6 rounded-xl bg-cinemaGold hover:bg-cinemaGoldHover text-obsidian font-display font-bold text-sm sm:text-base transition-all shadow-lg shadow-cinemaGold/15 flex items-center justify-center gap-2 cursor-pointer">
+                                <span>Request Production Proposal</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+
+                        <!-- Confirmation State (Hidden by default) -->
+                        <div id="form-success" class="hidden py-10 text-center space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-cinemaGold/15 border border-cinemaGold text-cinemaGold flex items-center justify-center mx-auto">
+                                <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-2xl text-offWhite">Project Brief Received</h3>
+                            <p class="text-sm text-mutedGray max-w-md mx-auto leading-relaxed">
+                                Thank you for reaching out to <span class="text-offWhite font-medium">Non-Stop Film</span>. Our producer team in London is reviewing your brief and will reply within 24 hours.
+                            </p>
+                            <button onclick="resetInquiryForm()" class="mt-4 px-5 py-2.5 rounded-lg bg-obsidian border border-borderSubtle text-xs font-medium text-offWhite hover:border-cinemaGold transition-colors">
+                                Send Another Inquiry
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-obsidian border-t border-borderSubtle py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="font-display font-bold tracking-wider text-base text-offWhite">
+                    NON-STOP <span class="text-cinemaGold">FILM</span>
+                </span>
+                <span class="text-borderSubtle">|</span>
+                <span class="text-xs text-mutedGray">Commercial &amp; Corporate Video Production • London, UK</span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-4">
+                <a href="https://vimeo.com" target="_blank" rel="noopener noreferrer" aria-label="Vimeo" class="p-2.5 rounded-lg bg-surface border border-borderSubtle text-mutedGray hover:text-cinemaGold hover:border-cinemaGold/50 transition-colors">
+                    <i data-lucide="video" class="w-4 h-4"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-2.5 rounded-lg bg-surface border border-borderSubtle text-mutedGray hover:text-cinemaGold hover:border-cinemaGold/50 transition-colors">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2.5 rounded-lg bg-surface border border-borderSubtle text-mutedGray hover:text-cinemaGold hover:border-cinemaGold/50 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <p class="text-xs text-mutedGray">
+                &copy; <span id="year"></span> Non-Stop Film Ltd. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== VIDEO LIGHTBOX MODAL ==================== -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-obsidian/95 backdrop-blur-lg p-4 sm:p-6">
+        <div class="relative w-full max-w-5xl bg-surface rounded-2xl border border-borderSubtle overflow-hidden shadow-2xl">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-5 py-4 border-b border-borderSubtle">
+                <div>
+                    <span id="modal-tag" class="text-[11px] font-semibold uppercase tracking-widest text-cinemaGold block">COMMERCIAL</span>
+                    <h3 id="modal-title" class="font-display font-bold text-base sm:text-lg text-offWhite">Project Title</h3>
+                </div>
+                <button onclick="closeVideoModal()" aria-label="Close Video" class="p-2 rounded-lg bg-obsidian border border-borderSubtle text-mutedGray hover:text-offWhite hover:border-cinemaGold transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Responsive 16:9 Iframe Container -->
+            <div class="relative aspect-video bg-black">
+                <iframe id="modal-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Modal Footer Note -->
+            <div class="px-5 py-3 bg-obsidian/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-mutedGray">
+                <span>Placeholder embed active — replace Vimeo/YouTube ID in code with your final master URL.</span>
+                <a href="#contact" onclick="closeVideoModal()" class="text-cinemaGold hover:underline font-medium">Inquire about a similar production &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset active button styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-cinemaGold', 'text-obsidian');
+                    b.classList.add('bg-surface', 'text-mutedGray', 'border', 'border-borderSubtle');
+                });
+
+                // Highlight selected filter button
+                btn.classList.remove('bg-surface', 'text-mutedGray', 'border', 'border-borderSubtle');
+                btn.classList.add('bg-cinemaGold', 'text-obsidian');
+
+                const selectedCategory = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Video Lightbox Modal Controls
+        const videoModal = document.getElementById('video-modal');
+        const modalIframe = document.getElementById('modal-iframe');
+        const modalTitle = document.getElementById('modal-title');
+        const modalTag = document.getElementById('modal-tag');
+
+        function openVideoModal(title, tag, embedUrl) {
+            modalTitle.textContent = title;
+            modalTag.textContent = tag;
+            modalIframe.src = embedUrl;
+            videoModal.classList.remove('hidden');
+            videoModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.add('hidden');
+            videoModal.classList.remove('flex');
+            modalIframe.src = ''; // Stop video playback immediately
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on background click or Escape key
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeVideoModal();
+            }
+        });
+
+        // Project Inquiry Form Handling (Interactive Demo + Ready for Formspree/Web3Forms)
+        const inquiryForm = document.getElementById('inquiry-form');
+        const formSuccess = document.getElementById('form-success');
+
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Show smooth confirmation UI
+            inquiryForm.classList.add('hidden');
+            formSuccess.classList.remove('hidden');
+        });
+
+        function resetInquiryForm() {
+            inquiryForm.reset();
+            formSuccess.classList.add('hidden');
+            inquiryForm.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
