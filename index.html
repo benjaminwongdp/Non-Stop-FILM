@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Non-Stop Film | Film, TV, Music Video &amp; Commercial Production London</title>
-  <meta name="description" content="London &amp; Hong Kong-based film, television, music video, commercial, and corporate production company delivering cinema-grade storytelling from development and cinematography to final grade." />
+  <meta name="description" content="London &amp; Hong Kong-based film, television, music video, commercial, and corporate production company delivering cinema-grade storytelling." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,13 +35,18 @@
       overflow-x: hidden;
     }
     .glass-nav {
-      background: rgba(10, 10, 12, 0.88);
+      background: rgba(10, 10, 12, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .film-grain {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
-      background-size: 24px 24px;
+    .hero-bg {
+      background-image:
+        linear-gradient(to top, #0A0A0C 5%, rgba(10, 10, 12, 0.72) 55%, rgba(10, 10, 12, 0.45) 100%),
+        linear-gradient(to right, #0A0A0C 15%, rgba(10, 10, 12, 0.55) 65%, rgba(10, 10, 12, 0.25) 100%),
+        url('hero-bts.jpg'),
+        url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
     }
     .project-card:hover .project-overlay {
       opacity: 1;
@@ -54,20 +59,10 @@
 <body class="antialiased selection:bg-gold selection:text-obsidian">
 
   <!-- Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img
-          id="nav-logo"
-          src="logo.png"
-          onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').classList.remove('hidden');"
-          alt="Non-Stop Film"
-          class="h-9 sm:h-10 w-auto object-contain"
-        />
-        <span id="nav-logo-fallback" class="hidden font-display font-bold text-xl tracking-wider uppercase text-white flex items-center gap-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-gold inline-block"></span>
-          Non-Stop Film
-        </span>
+      <a href="#" class="flex items-center">
+        <img src="logo.png" alt="Non-Stop Film" class="h-9 sm:h-10 w-auto object-contain" />
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
@@ -82,8 +77,145 @@
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-gray-200 hover:text-gold focus:outline-none" aria-label="Toggle Menu">
+      <button id="mobile-menu-btn" type="button" class="md:hidden text-gray-200 hover:text-gold focus:outline-none" aria-label="Toggle Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
-      </
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-b border-white/10 px-6 py-6 space-y-4">
+      <a href="#work" class="block text-gray-200 hover:text-gold text-base">Selected Credits</a>
+      <a href="#services" class="block text-gray-200 hover:text-gold text-base">Capabilities</a>
+      <a href="#advantage" class="block text-gray-200 hover:text-gold text-base">Why Us</a>
+      <a href="#bts" class="block text-gray-200 hover:text-gold text-base">On Set</a>
+      <a href="#process" class="block text-gray-200 hover:text-gold text-base">Process</a>
+      <a href="#contact" class="block w-full text-center py-3 bg-gold text-obsidian font-semibold rounded-sm">Start a Project</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 hero-bg">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-24 w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs uppercase tracking-widest mb-6">
+          <span>London &amp; Hong Kong • Film, TV &amp; Commercial Production</span>
+        </div>
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+          Narrative Craft Meets Commercial Impact.
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed mb-10 max-w-2xl">
+          Non-Stop Film is a London &amp; Hong Kong film, television, and commercial production house. Bridging theatrical cinematography with agile production management, we deliver scripted drama, music videos, commercials, and brand films from script to screen.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a href="#contact" class="px-8 py-4 bg-gold text-obsidian font-semibold text-sm uppercase tracking-wider rounded-sm hover:bg-goldLight transition-all text-center">
+            Request a Production Quote
+          </a>
+          <button
+            type="button"
+            onclick="openLightbox('https://www.youtube.com/embed/S0Wajm5NejM?autoplay=1&rel=0', 'Non-Stop Film — Cinematography & Commercial Showreel')"
+            class="px-8 py-4 border border-white/25 hover:border-gold text-white hover:text-gold font-medium text-sm uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-3 group"
+          >
+            <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-gold group-hover:text-obsidian flex items-center justify-center transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            Watch Showreel
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Metrics Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/10">
+        <div>
+          <p class="font-display text-3xl font-bold text-white">Film &amp; TV</p>
+          <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Scripted Drama &amp; Broadcast</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-gold">In-House</p>
+          <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Cinema Camera &amp; Lighting Units</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-white">End-to-End</p>
+          <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Production &amp; Cinematography</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl font-bold text-white">UK &amp; Asia</p>
+          <p class="text-xs uppercase tracking-wider text-gray-400 mt-1">Cross-Border Production Crews</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Credits & Work Section -->
+  <section id="work" class="py-24 bg-charcoal border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
+        <div>
+          <p class="text-gold text-xs uppercase tracking-widest font-semibold mb-2">Portfolio &amp; Track Record</p>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">Selected Credits &amp; Productions</h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2" id="filter-buttons">
+          <button type="button" data-filter="all" class="filter-btn active px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-sm bg-gold text-obsidian transition-colors">
+            All Work (29)
+          </button>
+          <button type="button" data-filter="film-tv" class="filter-btn px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-sm bg-slateDark text-gray-300 hover:text-white transition-colors">
+            Film &amp; TV (13)
+          </button>
+          <button type="button" data-filter="commercial" class="filter-btn px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-sm bg-slateDark text-gray-300 hover:text-white transition-colors">
+            Commercials (7)
+          </button>
+          <button type="button" data-filter="music-video" class="filter-btn px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-sm bg-slateDark text-gray-300 hover:text-white transition-colors">
+            Music Videos (7)
+          </button>
+          <button type="button" data-filter="corporate" class="filter-btn px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-sm bg-slateDark text-gray-300 hover:text-white transition-colors">
+            Corporate &amp; Brand (2)
+          </button>
+        </div>
+      </div>
+
+      <!-- Legal / Attribution Notice -->
+      <div class="mb-10 px-4 py-3 bg-obsidian/70 border-l-2 border-gold/60 text-xs text-gray-400 leading-relaxed rounded-r-sm">
+        <strong class="text-gray-200 font-medium">Credits &amp; Rights Notice:</strong> The showcase below features original productions by Non-Stop Film alongside selected external commissions where our founder and core crew served as Director of Photography, Camera Unit, or Production Partner. All copyrights and trademarks remain the property of their respective production houses, record labels, agencies, and commissioning brands.
+      </div>
+
+      <!-- Dynamic Portfolio Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="portfolio-grid"></div>
+    </div>
+  </section>
+
+  <!-- Capabilities / Services -->
+  <section id="services" class="py-24 bg-obsidian border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="max-w-2xl mb-16">
+        <p class="text-gold text-xs uppercase tracking-widest font-semibold mb-2">Production Capabilities</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mb-4">Built for Cinema, Broadcast &amp; Brands</h2>
+        <p class="text-gray-400 text-base leading-relaxed">
+          Whether commissioning a full-service production or engaging our senior cinematography and camera units for an existing production slate, we scale dedicated teams to fit the brief.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-8 bg-charcoal border border-white/10 rounded-sm hover:border-gold/50 transition-colors">
+          <div class="text-gold font-display text-2xl font-bold mb-4">01</div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">Film &amp; TV Production</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Scripted drama, narrative shorts, television series, and UK/Asia line production supported by experienced cinematography and lighting units.
+          </p>
+        </div>
+
+        <div class="p-8 bg-charcoal border border-white/10 rounded-sm hover:border-gold/50 transition-colors">
+          <div class="text-gold font-display text-2xl font-bold mb-4">02</div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">Commercials &amp; TVC</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            High-impact brand spots crafted for broadcast, cinema pre-roll, YouTube, and global digital campaigns that elevate brand equity.
+          </p>
+        </div>
+
+        <div class="p-8 bg-charcoal border border-white/10 rounded-sm hover:border-gold/50 transition-colors">
+          <div class="text-gold font-display text-2xl font-bold mb-4">03</div>
+          <h3 class="font-display text-xl font-bold text-white mb-3">Music Videos</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
