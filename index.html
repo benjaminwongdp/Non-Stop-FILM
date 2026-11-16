@@ -477,7 +477,7 @@
 
       // Music Videos (7)
       { title: "Exhausted — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ctMNOA8zrCg" },
-      { title: "The Perfect You — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "jT6KTD3nQqU" },
+      { title: "The Perfect You — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "jT6KTD3nQqU", thumb: "hqdefault" },
       { title: "The Last Time — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "WyRxADo6030" },
       { title: "Bad Movie Award — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ThSYElun8lE" },
       { title: "Crazy Love Song — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "po0m-kcWuSM" },
@@ -505,8 +505,8 @@
 
         card.innerHTML = `
           <div class="relative aspect-video overflow-hidden bg-slateDark">
-            <img
-              src="https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg"
+          <img
+              src="https://img.youtube.com/vi/${item.videoId}/${item.thumb || 'maxresdefault'}.jpg"
               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg';"
               alt="${item.title}"
               loading="lazy"
