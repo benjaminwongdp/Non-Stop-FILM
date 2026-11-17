@@ -99,17 +99,17 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (已將背景相位置調整為 object-center bottom) -->
   <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
         src="hero-bts.jpg"
         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=2070&q=80';"
         alt="Non-Stop Film production crew and lighting on set"
-        class="w-full h-full object-cover opacity-65 scale-105"
+        class="w-full h-full object-cover object-center bottom opacity-65 scale-105"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-obsidian/40"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/70 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-obsidian/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/50 to-transparent"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-24">
@@ -647,7 +647,7 @@
     function openLightbox(videoUrl, title) {
       lightboxTitle.textContent = title;
       lightboxIframe.src = videoUrl;
-      lightbox.classList.remove('hidden');
+      lightbox.classList.add('hidden');
       document.body.style.overflow = 'hidden';
     }
 
