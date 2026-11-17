@@ -99,7 +99,7 @@
     </div>
   </header>
 
-  <!-- Hero Section (已將背景相位置調整為 object-center bottom) -->
+  <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
@@ -520,17 +520,24 @@
     </div>
   </footer>
 
-  <!-- Video Lightbox Modal -->
+  <!-- Video Lightbox Modal (已修復 iframe 視頻渲染與權限) -->
   <div id="video-lightbox" class="fixed inset-0 z-50 hidden bg-obsidian/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
     <div class="relative w-full max-w-5xl">
       <div class="flex items-center justify-between mb-4">
         <h3 id="lightbox-title" class="font-display text-lg font-bold text-white">Project Title</h3>
-        <button onclick="closeLightbox()" class="text-gray-400 hover:text-gold text-sm uppercase tracking-wider flex items-center gap-1">
+        <button onclick="closeLightbox()" class="text-gray-400 hover:text-gold text-sm uppercase tracking-wider flex items-center gap-1 cursor-pointer">
           Close <span class="text-xl leading-none">&times;</span>
         </button>
       </div>
       <div class="relative aspect-video bg-black border border-white/15 rounded-sm overflow-hidden shadow-2xl">
-        <iframe id="lightbox-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe 
+          id="lightbox-iframe" 
+          class="w-full h-full" 
+          src="" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>
@@ -647,7 +654,7 @@
     function openLightbox(videoUrl, title) {
       lightboxTitle.textContent = title;
       lightboxIframe.src = videoUrl;
-      lightbox.classList.add('hidden');
+      lightbox.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
 
