@@ -252,7 +252,7 @@
           <div class="relative rounded-sm overflow-hidden border border-white/10 shadow-2xl">
             <img
               src="why-us-bts.jpg"
-              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&amp;fit=crop&amp;w=1400&amp;q=80';"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&amp;fit=crop&w=1400&q=80';"
               alt="Non-Stop Film cinema camera package and crew on set"
               class="w-full h-auto object-cover"
             />
@@ -542,10 +542,10 @@
     </div>
   </div>
 
-  <!-- Interactive Scripts, Complete Portfolio & Random Shuffle Logic -->
+  <!-- Interactive Scripts & Ordered Portfolio -->
   <script>
     const portfolioItems = [
-      // Film & TV
+      // Film & TV (Newest to Oldest)
       { title: "Summer Daymare", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "lhwepx_6Lj4" },
       { title: "ASURA", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Production", videoId: "mKY5_kCdfbc" },
       { title: "From Here to There", category: "film-tv", badge: "Film & TV", role: "Cinematography & Production Unit", videoId: "TCmRkDwnPc8" },
@@ -561,38 +561,42 @@
       { title: "PUMPING HEART", category: "film-tv", badge: "Film & TV", role: "Cinematography & Production Unit", videoId: "B6PTyXBNROU" },
       { title: "My Life Planning", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "KeyHsGmWRko" },
       { title: "Our Midsummer Sprawl", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "UMYfzea-134" },
-      { title: "That Mum — Episode One", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "AzG-0n00pK8" },
-      { title: "That Mum — Episode Two", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "Z4UR5qqH-hY" },
+      { title: "That Mum - Episode One", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "AzG-0n00pK8" },
+      { title: "That Mum - Episode Two", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "Z4UR5qqH-hY" },
       { title: "Taiwan Story II", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "XyF3LMnlT64" },
       { title: "HKSEDS Seeing Eye Guide Dog Diary", category: "film-tv", badge: "Film & TV", role: "Cinematography & Production Unit", videoId: "oTYjcRj7Wa4" },
       { title: "Hero in Pain", category: "film-tv", badge: "Film & TV", role: "Cinematography & Drama Production", videoId: "xQeFAT-nJYk" },
       { title: "Hero or Devil", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "q0QWszXrRC4" },
-      { title: "The Drifter", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "9sQa6bFJGGM" },
+      { title: "THe Drifter", category: "film-tv", badge: "Film & TV", role: "Cinematography & Narrative Unit", videoId: "9sQa6bFJGGM" },
 
-      // Music Videos
+      // Music Video (Newest to Oldest)
       { title: "One Up - C11AMPION", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "XYgSNNXtkDg" },
       { title: "Power Play - C11AMPION", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "4lhdOdge2_A" },
-      { title: "Exhausted — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ctMNOA8zrCg" },
-      { title: "The Perfect You — Fred Cheung feat. Puinam", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "vowzAswOU1g" },
-      { title: "The Last Time — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "bZ9hxMdyqlI" },
-      { title: "Bad Movie Award — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ThSYElun8lE" },
-      { title: "絕望時請點播 — Stephanie Ho", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "INjpuUFnjqE" },
-      { title: "Chill Son — WanKwong x PHA", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "qldK2Q0F-K4" },
-      { title: "Crazy Love Song — Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "po0m-kcWuSM" },
+      { title: "Exhausted - Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ctMNOA8zrCg" },
+      { title: "The Perfect You - Fred Cheung feat. Puinam", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "vowzAswOU1g" },
+      { title: "The Last Time - Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "bZ9hxMdyqlI" },
+      { title: "Bad Movie Award - Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ThSYElun8lE" },
+      { title: "絕望時請點播 - Stephanie Ho", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "INjpuUFnjqE" },
+      { title: "Chill Son - WanKwong x PHA", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "qldK2Q0F-K4" },
+      { title: "Crazy Love Song - Fred Cheung", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "po0m-kcWuSM" },
       { title: "Fred Cheng Destination Ares", category: "music-video", badge: "Music Video", role: "Cinematography & Performance Unit", videoId: "5q0STS22zzk" },
       { title: "Circle", category: "music-video", badge: "Music Video", role: "Cinematography & Lighting Unit", videoId: "ujPDgDy5gpU" },
 
-      // Corporate & Brand
-      { title: "Sun Life New Office", category: "corporate", badge: "Corporate & Brand", role: "Production & Cinematography", videoId: "cDfAttdWGjw" },
-      { title: "Infinitum Golf and the DP World European Tour 2022", category: "corporate", badge: "Corporate & Brand", role: "Cinematography & Event Unit", videoId: "xcUVYWJ_E9s" },
+      // Corporate & Brand (Newest to Oldest)
       { title: "BrightSmile", category: "corporate", badge: "Corporate & Brand", role: "Production & Cinematography", videoId: "X0pucyIcuVE" },
+      { title: "Infinitum Golf and the DP World European Tour 2022", category: "corporate", badge: "Corporate & Brand", role: "Cinematography & Event Unit", videoId: "xcUVYWJ_E9s" },
+      { title: "Sun Life New Office", category: "corporate", badge: "Corporate & Brand", role: "Production & Cinematography", videoId: "cDfAttdWGjw" },
 
-      // Commercials
+      // Commercials (Newest to Oldest)
       { title: "Flushd", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "hWYwxInqnII" },
-      { title: "Corinthia London — Make My Wish Come True", category: "commercial", badge: "Commercial", role: "Cinematography & Production Unit", videoId: "dXuHMFeMXDI" },
+      { title: "Corinthia London - Make My Wish Come True", category: "commercial", badge: "Commercial", role: "Cinematography & Production Unit", videoId: "dXuHMFeMXDI" },
       { title: "LGStyler", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "bW6eMZTYF5I" },
       { title: "Ma Pak Leung", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "opIrBPPhUcQ" },
       { title: "Yusaika", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "diIOJYSnprc" },
+      { title: "Citibank Cafe", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "55KoHwX-zJw" },
+      { title: "CitiBank School", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "LUTj-5v5rq8" },
+      { title: "Heiliuba", category: "commercial", badge: "Commercial", role: "Production & Cinematography", videoId: "zUdTvMm3hWE" },
+      { title: "Hung Fook Tong TVC", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "papCBXO03AE" },
       { title: "Asia Miles x FAMA", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "plQkw2wnsrE" },
       { title: "Asia Miles x Football", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "-L9t9KeadAA" },
       { title: "Asia Miles Presents PayOnceEarnTwice", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "zzeI_0pYYHY" },
@@ -608,35 +612,19 @@
       { title: "Snapask TVC", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "JB7CLZAcIOA" },
       { title: "Snapask English Course", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "kmKCCORNXfM" },
       { title: "Snapask Chinese Course", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "3cXZD9WHEf4" },
-      { title: "Men's Bigen", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "OdCsM0SpinI" },
-      { title: "Citibank Cafe", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "55KoHwX-zJw" },
-      { title: "CitiBank School", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "LUTj-5v5rq8" },
-      { title: "Heiliuba", category: "commercial", badge: "Commercial", role: "Production & Cinematography", videoId: "zUdTvMm3hWE" },
-      { title: "Hung Fook Tong TVC", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "papCBXO03AE" }
+      { title: "Men's Bigen", category: "commercial", badge: "Commercial", role: "Cinematography & Commercial Unit", videoId: "OdCsM0SpinI" }
     ];
-
-    // Random Shuffle Function (Fisher-Yates Algorithm)
-    function shuffleArray(array) {
-      let shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
 
     const portfolioGrid = document.getElementById('portfolio-grid');
 
     function renderPortfolio(filter = 'all') {
       portfolioGrid.innerHTML = '';
 
-      const filtered = filter === 'all'
+      const itemsToRender = filter === 'all'
         ? portfolioItems
         : portfolioItems.filter(item => item.category === filter);
 
-      const randomizedItems = shuffleArray(filtered);
-
-      randomizedItems.forEach(item => {
+      itemsToRender.forEach(item => {
         const safeTitle = item.title.replace(/'/g, "\\'");
         const thumbSrc = `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
 
